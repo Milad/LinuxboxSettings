@@ -3,6 +3,9 @@
 # To make PhpStorm to work under dwm.
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+# Load Xresources settings
+xrdb -load ~/Documents/Settings/.Xdefaults &
+
 # Background
 feh --bg-fill ~/Documents/Wallpapers/ --no-fehbg --randomize --recursive
 
