@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# To make PhpStorm to work under dwm.
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Background
+feh --bg-fill ~/Documents/Wallpapers/ --no-fehbg --randomize --recursive
+
+while true
+do
+    datetime=$(date +"%a %d %b %R")
+    disk=$(/usr/local/src/i3blocks/scripts/disk | sed -n 2p)
+    memory=$(/usr/local/src/i3blocks/scripts/memory | sed -n 2p)
+    load=$(/usr/local/src/i3blocks/scripts/load_average | sed -n 2p)
+    xsetroot -name "Load $load | Mem $memory | HDD $disk | $datetime"
+    sleep 1
+done &
+
+while true
+do
+    slockauto.sh
+    sleep 60
+done &
+
+exec dwm
