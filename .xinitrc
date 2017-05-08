@@ -9,6 +9,9 @@ xrdb -load ~/Documents/Settings/.Xdefaults &
 # Background
 feh --bg-fill ~/Documents/Wallpapers/ --no-fehbg --randomize --recursive
 
+# Composite for transparency
+xcompmgr -cn &
+
 while true
 do
     datetime=$(date +" %a %d %b  %R")
