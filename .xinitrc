@@ -15,7 +15,14 @@ do
     disk=$(/usr/local/src/i3blocks/scripts/disk | sed -n 2p)
     memory=$(/usr/local/src/i3blocks/scripts/memory | sed -n 2p)
     load=$(/usr/local/src/i3blocks/scripts/load_average | sed -n 2p)
-    xsetroot -name " $load  $memory  $disk $datetime"
+
+    dropbox_status=$(dropbox.py status)
+    dropbox_icon=""
+    if [ "$dropbox_status" != "Dropbox isn't running!" ]; then
+        dropbox_icon=" "
+    fi
+
+    xsetroot -name "$dropbox_icon  $load  $memory  $disk $datetime"
     sleep 1
 done &
 
