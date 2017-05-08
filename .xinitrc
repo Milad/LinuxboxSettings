@@ -7,10 +7,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 xrdb -load ~/Documents/Settings/.Xdefaults &
 
 # Background
-feh --bg-fill ~/Documents/Wallpapers/ --no-fehbg --randomize --recursive
-
-# Composite for transparency
-xcompmgr -cn &
+feh --bg-fill ~/Documents/Wallpapers/ --no-fehbg --randomize --recursive &
 
 while true
 do
