@@ -11,11 +11,11 @@ feh --bg-fill ~/Documents/Wallpapers/ --no-fehbg --randomize --recursive
 
 while true
 do
-    datetime=$(date +"%a %d %b %R")
+    datetime=$(date +" %a %d %b  %R")
     disk=$(/usr/local/src/i3blocks/scripts/disk | sed -n 2p)
     memory=$(/usr/local/src/i3blocks/scripts/memory | sed -n 2p)
     load=$(/usr/local/src/i3blocks/scripts/load_average | sed -n 2p)
-    xsetroot -name "Load $load | Mem $memory | HDD $disk | $datetime"
+    xsetroot -name " $load  $memory  $disk $datetime"
     sleep 1
 done &
 
