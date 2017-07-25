@@ -5,10 +5,13 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 calendar_icon=$(echo -e "\xEF\x81\xB3")
 time_icon=$(echo -e "\xEF\x80\x97")
-disk_icon=$(echo -e "\xEF\x87\x80")
+disk_icon=$(echo -e "\xEF\x82\xA0")
 memory_icon=$(echo -e "\xEF\x8B\x9B")
 load_icon=$(echo -e "\xEF\x87\xBE")
 dropbox_icon=$(echo -e "\xEF\x85\xAB")
+keyboard_icon=$(echo -e "\xEF\x84\x9C")
+vol_muted_icon=$(echo -e "\xEF\x80\xA6")
+vol_full_icon=$(echo -e "\xEF\x80\xA8")
 
 # Load Xresources settings
 xrdb -load ~/Documents/Settings/.Xdefaults &
@@ -25,12 +28,14 @@ do
     load=$(/usr/local/src/i3blocks/scripts/load_average | sed -n 2p)
 
     dropbox_status=$(dropbox.py status)
-    db_icon=""
+    dp_icon=""
     if [ "$dropbox_status" != "Dropbox isn't running!" ]; then
-        db_icon=" $dropbox_icon"
+        dp_icon=" $dropbox_icon"
     fi
 
-    xsetroot -name "$db_icon $load_icon $load $memory_icon $memory $disk_icon $disk $datetime"
+    kb_layout=$(setxkbmap -print | awk -F"+" '/xkb_symbols/ {print $2}' | sed 's/.*/\U&/')
+
+    xsetroot -name "$dp_icon $vol_full_icon $keyboard_icon $kb_layout $load_icon $load $memory_icon $memory $disk_icon $disk $datetime"
     sleep 1
 done &
 
