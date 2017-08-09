@@ -29,8 +29,10 @@ do
 
     dropbox_status=$(dropbox.py status)
     dp_icon=""
-    if [ "$dropbox_status" != "Dropbox isn't running!" ]; then
-        dp_icon=" $dropbox_icon"
+    if [ -f dropbox.py ]; then
+        if [ "$dropbox_status" != "Dropbox isn't running!" ]; then
+            dp_icon=" $dropbox_icon"
+        fi
     fi
 
     kb_layout=$(setxkbmap -print | awk -F"+" '/xkb_symbols/ {print $2}' | sed 's/.*/\U&/')
