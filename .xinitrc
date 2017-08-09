@@ -27,9 +27,9 @@ do
     memory=$(/usr/local/src/i3blocks/scripts/memory | sed -n 2p)
     load=$(/usr/local/src/i3blocks/scripts/load_average | sed -n 2p)
 
-    dropbox_status=$(dropbox.py status)
     dp_icon=""
     if [ -f dropbox.py ]; then
+        dropbox_status=$(dropbox.py status)
         if [ "$dropbox_status" != "Dropbox isn't running!" ]; then
             dp_icon=" $dropbox_icon"
         fi
