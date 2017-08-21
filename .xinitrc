@@ -37,7 +37,14 @@ do
 
     kb_layout=$(setxkbmap -print | awk -F"+" '/xkb_symbols/ {print $2}' | sed 's/.*/\U&/')
 
-    xsetroot -name "$dp_icon $vol_full_icon $keyboard_icon $kb_layout $load_icon $load $memory_icon $memory $disk_icon $disk $datetime"
+    volume=$(/usr/local/src/i3blocks/scripts/volume)
+    if [ "$volume" == "MUTE" ]; then
+        vol_icon="$vol_muted_icon"
+    else
+        vol_icon="$vol_full_icon $volume"
+    fi
+
+    xsetroot -name "$dp_icon $vol_icon $keyboard_icon $kb_layout $load_icon $load $memory_icon $memory $disk_icon $disk $datetime"
     sleep 1
 done &
 
