@@ -28,7 +28,8 @@ do
     load=$(/usr/local/src/i3blocks/scripts/load_average | sed -n 2p)
 
     dp_icon=""
-    if [ -f dropbox.py ]; then
+    path_to_dropbox=$(which dropbox.py)
+    if [ -x "$path_to_dropbox" ]; then
         dropbox_status=$(dropbox.py status)
         if [ "$dropbox_status" != "Dropbox isn't running!" ]; then
             dp_icon=" $dropbox_icon"
