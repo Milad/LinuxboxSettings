@@ -12,6 +12,7 @@ dropbox_icon=$(echo -e "\xEF\x85\xAB")
 keyboard_icon=$(echo -e "\xEF\x84\x9C")
 vol_muted_icon=$(echo -e "\xEF\x80\xA6")
 vol_full_icon=$(echo -e "\xEF\x80\xA8")
+battery_icon=$(echo -e "\xEF\x89\x80")
 
 # Load Xresources settings
 xrdb -load ~/Documents/Settings/.Xdefaults &
@@ -26,6 +27,7 @@ do
     disk=$(/usr/local/src/i3blocks/scripts/disk | sed -n 2p)
     memory=$(/usr/local/src/i3blocks/scripts/memory | sed -n 2p)
     load=$(/usr/local/src/i3blocks/scripts/load_average | sed -n 2p)
+    battery=$(/usr/local/src/i3blocks/scripts/battery | sed -n 2p)
 
     dp_icon=""
     path_to_dropbox=$(which dropbox.py)
@@ -45,7 +47,7 @@ do
         vol_icon="$vol_full_icon $volume"
     fi
 
-    xsetroot -name "$dp_icon $vol_icon $keyboard_icon $kb_layout $load_icon $load $memory_icon $memory $disk_icon $disk $datetime"
+    xsetroot -name "$dp_icon $vol_icon $keyboard_icon $kb_layout $load_icon $load $memory_icon $memory $battery_icon $battery $disk_icon $disk $datetime"
     sleep 1
 done &
 
