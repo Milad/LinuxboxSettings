@@ -20,7 +20,7 @@ dropbox_icon=$(echo -e "\xEF\x85\xAB")
 xrdb -load ~/Documents/Settings/.Xdefaults &
 
 # Background
-feh --bg-fill ~/Documents/Wallpapers/ --no-fehbg --randomize --recursive &
+feh --bg-fill ~/Documents/Settings/Wallpapers/ --no-fehbg --randomize --recursive &
 
 while true
 do
