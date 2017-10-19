@@ -22,6 +22,6 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 PATH="$HOME/.local/share/JetBrains/Toolbox/apps/PhpStorm/ch-0/172.4155.41/bin:$PATH"
-PATH="$HOME/.local/share/JetBrains/Toolbox/apps/Gogland/ch-0/173.2696.28/bin:$PATH"
+PATH="$HOME/.local/share/JetBrains/Toolbox/apps/Gogland/ch-0/173.3188.63/bin:$PATH"
 PATH="$HOME/.local/share/JetBrains/Toolbox/bin:$PATH"
 PATH="$HOME/Documents/Settings/scripts:$PATH"
