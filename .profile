@@ -23,5 +23,6 @@ fi
 
 PATH="$HOME/.local/share/JetBrains/Toolbox/apps/PhpStorm/ch-0/181.4203.565/bin:$PATH"
 PATH="$HOME/.local/share/JetBrains/Toolbox/apps/Gogland/ch-0/173.3415.23/bin:$PATH"
+PATH="$HOME/.local/share/JetBrains/Toolbox/apps/PyCharm-P/ch-0/181.4203.547/bin:$PATH"
 PATH="$HOME/.local/share/JetBrains/Toolbox/bin:$PATH"
 PATH="$HOME/Documents/Settings/scripts:$PATH"
