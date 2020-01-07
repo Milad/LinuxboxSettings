@@ -21,8 +21,14 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-PATH="$HOME/.local/share/JetBrains/Toolbox/apps/PhpStorm/ch-0/181.4203.565/bin:$PATH"
-PATH="$HOME/.local/share/JetBrains/Toolbox/apps/Gogland/ch-0/173.3415.23/bin:$PATH"
-PATH="$HOME/.local/share/JetBrains/Toolbox/apps/PyCharm-P/ch-0/181.4203.547/bin:$PATH"
+MY_PHPSTORM_VERSION="193.5662.63"
+MY_GOGLAND_VERSION="192.5728.103"
+MY_PYCHARM_VERSION="181.4203.547"
+MY_CLION_VERSION="191.7141.37"
+
+PATH="$HOME/.local/share/JetBrains/Toolbox/apps/PhpStorm/ch-0/$MY_PHPSTORM_VERSION/bin:$PATH"
+PATH="$HOME/.local/share/JetBrains/Toolbox/apps/Gogland/ch-0/$MY_GOGLAND_VERSION/bin:$PATH"
+PATH="$HOME/.local/share/JetBrains/Toolbox/apps/PyCharm-P/ch-0/$MY_PYCHARM_VERSION/bin:$PATH"
+PATH="$HOME/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/$MY_CLION_VERSION/bin:$PATH"
 PATH="$HOME/.local/share/JetBrains/Toolbox/bin:$PATH"
 PATH="$HOME/Documents/Settings/scripts:$PATH"
